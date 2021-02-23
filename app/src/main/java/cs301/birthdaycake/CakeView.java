@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 
 public class CakeView extends SurfaceView {
+    private CakeModel cakemodel;
 
     /* These are the paints we'll use to draw the birthday cake below */
     Paint cakePaint = new Paint();
@@ -40,9 +41,10 @@ public class CakeView extends SurfaceView {
      * ctor must be overridden here as per standard Java inheritance practice.  We need it
      * anyway to initialize the member variables
      */
+
     public CakeView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
+        CakeModel CakeModel = new CakeModel();
         //This is essential or your onDraw method won't get called
         setWillNotDraw(false);
 
@@ -64,6 +66,9 @@ public class CakeView extends SurfaceView {
 
     }
 
+    public CakeModel getCakeModel() {
+        return cakemodel;
+    }
     /**
      * draws a candle at a specified position.  Important:  the left, bottom coordinates specify
      * the position of the bottom left corner of the candle
