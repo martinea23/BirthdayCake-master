@@ -41,11 +41,17 @@ public class CakeController implements CompoundButton.OnCheckedChangeListener, V
     public void onStopTrackingTouch(SeekBar seekBar){}
 
     @Override
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        System.out.println("touched");
-        cakemodel.setTouch(motionEvent.getX(),motionEvent.getY());
-        Log.d("Touch", "touch recieved");
+    public boolean onTouch(View v, MotionEvent event ) {
+        int x = (int) event.getRawX();
+        int y = (int) event.getRawY();
+
+        cakemodel.setX(x);
+        cakemodel.setY(y);
         cakeView.invalidate();
+
         return true;
     }
+
+
+
 }

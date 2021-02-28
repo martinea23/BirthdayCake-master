@@ -5,9 +5,8 @@ public class CakeModel {
     public int numCand = 2;
     public boolean frost = true ;
     public boolean cand = true;
-    public float xTouch = -100.0f;
-    public float yTouch = -100.0f;
-
+    public int x  = -100;
+    public int y = -100;
 
     public void setCandlesLit(boolean candleIsLit){
         this.candleIslit = candleIsLit;
@@ -33,8 +32,17 @@ public class CakeModel {
         return cand;
     }
 
-    public void setTouch(float x, float y){
-        this.xTouch = x;
-        this.yTouch = y;
+    public void setX(int x){
+        this.x = x;
+    }
+    public void setY(int y){
+        this.y = y;
+    }
+    public int getX(){
+        return x;
+    }
+
+    public int getY(){
+        return y;
     }
 }
