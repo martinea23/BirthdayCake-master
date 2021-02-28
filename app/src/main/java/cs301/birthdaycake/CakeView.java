@@ -67,6 +67,8 @@ public class CakeView extends SurfaceView {
         innerFlamePaint.setStyle(Paint.Style.FILL);
         wickPaint.setColor(Color.BLACK);
         wickPaint.setStyle(Paint.Style.FILL);
+        balloon.setColor(Color.BLUE);
+        string.setColor(Color.BLACK);
         paint.setColor(Color.RED);
         paint.setTextSize(100);
 
@@ -141,11 +143,11 @@ public class CakeView extends SurfaceView {
         }
 
         //balloon
-
-        canvas.drawCircle(cakemodel.x, cakemodel.y,70.0f,balloon);
-        canvas.drawOval(cakemodel.x - 45.f,cakemodel.y - 50.f,cakemodel.x + 45f,cakemodel.y + 100.f,balloon);
-        canvas.drawLine(cakemodel.x,cakemodel.y + 100f,cakemodel.x + 5f,cakemodel.y + 300f,string);
-
+        if(cakemodel.getX() != 0 && cakemodel.getY() != 0) {
+            canvas.drawCircle(cakemodel.getX(), cakemodel.getY() - 330.0f, 70.0f, balloon);
+            canvas.drawOval(cakemodel.x - 45.f, cakemodel.y - 50.f - 330.0f, cakemodel.x + 45f, cakemodel.y + 100.f -330.0f, balloon);
+            canvas.drawLine(cakemodel.x, cakemodel.y + 100f - 330f, cakemodel.x + 5f, cakemodel.y, string);
+        }
 
         canvas.drawText(cakemodel.getX() + " , " + cakemodel.getY(), 1500, 650, paint);
     }//onDraw

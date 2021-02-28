@@ -5,8 +5,8 @@ public class CakeModel {
     public int numCand = 2;
     public boolean frost = true ;
     public boolean cand = true;
-    public int x  = -100;
-    public int y = -100;
+    public int x  = 0;
+    public int y = 0;
 
     public void setCandlesLit(boolean candleIsLit){
         this.candleIslit = candleIsLit;
