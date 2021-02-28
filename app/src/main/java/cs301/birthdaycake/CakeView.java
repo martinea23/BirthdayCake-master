@@ -132,6 +132,10 @@ public class CakeView extends SurfaceView {
                 drawCandle(canvas, cakeLeft + ((cakeWidth / (cakemodel.getNumCand() + 1)) * (i + 1)) - candleWidth / 2, cakeTop);
             }
         }
+        Paint paint = new Paint();
+        paint.setColor(Color.RED);
+        paint.setTextSize(100);
+        canvas.drawText(cakemodel.getX() + " , " + cakemodel.getY(), 1500, 650, paint);
     }//onDraw
 
 }//class CakeView
