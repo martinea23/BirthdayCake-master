@@ -45,18 +45,6 @@ public class CakeController implements CompoundButton.OnCheckedChangeListener, V
         int x = (int) event.getRawX();
         int y = (int) event.getRawY();
 
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                Log.i("TAG", "touched down");
-                break;
-            case MotionEvent.ACTION_MOVE:
-                Log.i("TAG", "moving: (" + x + ", " + y + ")");
-                break;
-            case MotionEvent.ACTION_UP:
-                Log.i("TAG", "touched up");
-                break;
-        }
-
         cakemodel.setX(x);
         cakemodel.setY(y);
         cakeView.invalidate();
